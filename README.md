@@ -1,11 +1,13 @@
 # ExTail
+> Simple tailer with position handling for Elixir.
 
-**TODO: Add description**
+# Usage
+```elixir
+{:ok, pid} = ExTail.start_link("test.txt", fn: &IO.inspect(&1), interval: 1000)
+GenServer.stop(pid)
+```
 
 ## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `ex_tail` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -14,8 +16,3 @@ def deps do
   ]
 end
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/ex_tail](https://hexdocs.pm/ex_tail).
-
